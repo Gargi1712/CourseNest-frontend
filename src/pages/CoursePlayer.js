@@ -9,6 +9,10 @@ const CoursePlayer = () => {
   const [videos, setVideos] = useState([]);
    const [watched, setWatched] = useState({});
 
+   const BASE_URL = process.env.REACT_APP_API_BASE_URL;
+
+
+
   useEffect(() => {
     const fetchVideos = async () => {
   const token = localStorage.getItem('token'); 
@@ -19,7 +23,7 @@ const CoursePlayer = () => {
   }
 
   try {
-    const res = await axios.get(`http://localhost:5000/course/${id}/videos`, {
+    const res = await axios.get(`{BASE_URL}/course/${id}/videos`, {
       headers: {
         Authorization: `Bearer ${token}`
       }

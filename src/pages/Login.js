@@ -17,9 +17,11 @@ const Login = () => {
       return;
     }
 
+    const BASE_URL = process.env.REACT_APP_API_BASE_URL;
+
     try {
       // ✅ axios POST request
-      const res = await axios.post('http://localhost:5000/login', {
+      const res = await axios.post('{BASE_URL}/login', {
         email,
         password,
       });

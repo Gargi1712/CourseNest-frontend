@@ -8,6 +8,8 @@ const Payment = () => {
   const navigate = useNavigate();
   const course = location.state?.course;
 
+ const BASE_URL = process.env.REACT_APP_API_BASE_URL;
+
   const [method, setMethod] = useState('card');
 
  useEffect(() => {
@@ -87,7 +89,7 @@ const Payment = () => {
   }
 
   try {
-    const res = await axios.post('http://localhost:5000/payment', {
+    const res = await axios.post('{BASE_URL}/payment', {
       courseId: course.id,
         paymentMethod: method, 
     }, {

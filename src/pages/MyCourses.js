@@ -6,11 +6,15 @@ const MyCourses = () => {
   const [courses, setCourses] = useState([]);
   const navigate = useNavigate();
 
+ const BASE_URL = process.env.REACT_APP_API_BASE_URL;
+
+
+
   useEffect(() => {
     const fetchCourses = async () => {
       const token = localStorage.getItem('token');
       try {
-        const res = await axios.get('http://localhost:5000/my-courses', {
+        const res = await axios.get('{BASE_URL}/my-courses', {
           headers: {
             Authorization: `Bearer ${token}`,
           },

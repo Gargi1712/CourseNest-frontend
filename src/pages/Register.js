@@ -12,6 +12,9 @@ const Register = () => {
   });
 
   const [error, setError] = useState('');
+ const BASE_URL = process.env.REACT_APP_API_BASE_URL;
+
+
 
   const handleChange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value });
@@ -26,7 +29,7 @@ const Register = () => {
     }
 
     try {
-      const res = await axios.post('http://localhost:5000/register', form);
+      const res = await axios.post('{BASE_URL}/register', form);
       console.log("✅ Registered user:", res.data);
       navigate('/login'); 
     } catch (err) {

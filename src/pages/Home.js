@@ -9,10 +9,13 @@ const Home = () => {
   const [selectedCourse, setSelectedCourse] = useState(null);
   const navigate = useNavigate();
 
+const BASE_URL = process.env.REACT_APP_API_BASE_URL;
+
+
   useEffect(() => {
     const fetchCourses = async () => {
       try {
-        const res = await axios.get('http://localhost:5000/courses');
+        const res = await axios.get('{BASE_URL}/courses');
         console.log('Courses received:', res.data);
         setCourses(res.data);
       } catch (error) {
