@@ -1,6 +1,4 @@
-git add .
-git commit -m "Reuploaded clean version of project"
-git push origin master
+
 {
   "short_name": "React App",
   "name": "Create React App Sample",

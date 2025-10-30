@@ -21,7 +21,7 @@ const Login = () => {
 
     try {
       // ✅ axios POST request
-      const res = await axios.post('{BASE_URL}/login', {
+      const res = await axios.post(`${BASE_URL}/login`, {
         email,
         password,
       });

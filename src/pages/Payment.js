@@ -89,7 +89,7 @@ const Payment = () => {
   }
 
   try {
-    const res = await axios.post('{BASE_URL}/payment', {
+    const res = await axios.post(`${BASE_URL}/payment`, {
       courseId: course.id,
         paymentMethod: method, 
     }, {

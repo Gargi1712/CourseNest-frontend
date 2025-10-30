@@ -29,7 +29,7 @@ const Register = () => {
     }
 
     try {
-      const res = await axios.post('{BASE_URL}/register', form);
+      const res = await axios.post(`${BASE_URL}/register`, form);
       console.log("✅ Registered user:", res.data);
       navigate('/login'); 
     } catch (err) {

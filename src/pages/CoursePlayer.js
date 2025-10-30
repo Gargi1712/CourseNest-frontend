@@ -23,7 +23,7 @@ const CoursePlayer = () => {
   }
 
   try {
-    const res = await axios.get(`{BASE_URL}/course/${id}/videos`, {
+    const res = await axios.get(`${BASE_URL}/course/${id}/videos`, {
       headers: {
         Authorization: `Bearer ${token}`
       }
